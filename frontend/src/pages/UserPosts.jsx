@@ -7,10 +7,8 @@ import PostDetails from "../components/PostDetails";
 
 const UserPosts = () => {
   const { id } = useParams();
-  const { user } = useAuthContext();
   const { posts, dispatch } = usePostsContext();
 
-  //animation
   const [parent] = useAutoAnimate();
 
   useEffect(() => {
@@ -30,9 +28,13 @@ const UserPosts = () => {
   return (
     <div ref={parent} className="posts">
       {posts && <h1>{posts[0]?.user.name}</h1>}
-      {posts
-        ? posts.map((post) => <PostDetails key={post._id} post={post} />)
-        : "asd"}
+      {posts?.length ? (
+        posts.map((post) => <PostDetails key={post._id} post={post} />)
+      ) : (
+        <div style={{ marginBlock: 50 }}>
+          This user haven't posted anything.
+        </div>
+      )}
     </div>
   );
 };

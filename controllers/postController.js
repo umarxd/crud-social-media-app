@@ -33,7 +33,6 @@ const createPost = async (req, res) => {
   if (content.length > 256) {
     return res.status(400).json({ error: "256 characters is the max." });
   }
-  // add doc to db
   try {
     const user = req.user;
     const post = await Post.create({ content, user });
