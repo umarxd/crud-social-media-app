@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { usePostsContext } from "../hooks/usePostsContext";
-import { useAuthContext } from "../hooks/useAuthContext";
 import PostDetails from "../components/PostDetails";
 
 const UserPosts = () => {
@@ -13,9 +12,7 @@ const UserPosts = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(
-        `http://localhost:4000/api/posts/user/${id}`
-      );
+      const response = await fetch(`/api/posts/user/${id}`);
       const json = await response.json();
 
       if (response.ok) {

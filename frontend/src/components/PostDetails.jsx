@@ -6,10 +6,10 @@ import { usePostsContext } from "../hooks/usePostsContext";
 
 const PostDetails = ({ post }) => {
   const { user } = useAuthContext();
-  const { posts, dispatch } = usePostsContext();
+  const { dispatch } = usePostsContext();
 
   const deletePost = async (id) => {
-    const response = await fetch(`http://localhost:4000/api/posts/${id}`, {
+    const response = await fetch(`/api/posts/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
