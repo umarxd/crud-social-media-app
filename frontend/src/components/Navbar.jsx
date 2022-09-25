@@ -21,15 +21,28 @@ const Navbar = () => {
               <Link className="font-bold" to={`/user/${user.id}`}>
                 {user.name}
               </Link>
-              <button className="mx-2" onClick={handleClick}>
+              <button
+                className="mx-2 transition-all ease-in duration-75 bg-slate-800 hover:bg-slate-900 font-bold text-base px-2 py-1 rounded-sm"
+                onClick={handleClick}
+              >
                 Log out
               </button>
             </div>
           )}
           {!user && (
             <div className="nav-links">
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
+              <Link
+                className="transition-all ease-in duration-75 bg-slate-800 hover:bg-slate-900 font-bold text-base px-2 py-1 rounded-sm"
+                to="/login"
+              >
+                Login
+              </Link>
+              <Link
+                className="mx-2 transition-all ease-in duration-75 bg-slate-800 hover:bg-slate-900 font-bold text-base px-2 py-1 rounded-sm"
+                to="/signup"
+              >
+                Signup
+              </Link>
             </div>
           )}
         </nav>

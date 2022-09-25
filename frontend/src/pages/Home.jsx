@@ -56,14 +56,16 @@ const Home = () => {
           <input
             value={postInput}
             onChange={(e) => setPostInput(e.target.value)}
-            className="w-3/5 h-12 mt-4 text-black self-center"
+            className="w-3/5 h-8 mt-4 p-6  text-black self-center"
             placeholder="256 characters is the max."
           />
           <button
             onClick={() => createPost(postInput)}
-            className="mt-2 border-2 self-center"
+            className="self-center inline-flex items-center justify-center p-0.5 my-2 text-sm font-medium rounded-sm group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white"
           >
-            Create a post
+            <span className="p-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0">
+              Create a Post
+            </span>
           </button>
         </div>
       )}
