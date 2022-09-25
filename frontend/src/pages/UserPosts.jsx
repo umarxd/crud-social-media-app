@@ -25,7 +25,7 @@ const UserPosts = () => {
   }, [dispatch, id]);
 
   return (
-    <div ref={parent} className="posts">
+    <div ref={parent} className="">
       {posts && <h1>{posts[0]?.user.name}</h1>}
       {posts?.length ? (
         posts.map((post) => <PostDetails key={post._id} post={post} />)

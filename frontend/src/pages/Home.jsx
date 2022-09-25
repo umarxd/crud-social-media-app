@@ -50,19 +50,22 @@ const Home = () => {
   }, [dispatch, user]);
 
   return (
-    <div className="home">
+    <div>
       {user && (
-        <>
-          <button onClick={() => createPost(postInput)} className="post-button">
-            Create a post
-          </button>
-          <textarea
+        <div className="flex flex-col">
+          <input
             value={postInput}
             onChange={(e) => setPostInput(e.target.value)}
-            className="createPostInput"
+            className="w-3/5 h-12 mt-4 text-black self-center"
             placeholder="256 characters is the max."
           />
-        </>
+          <button
+            onClick={() => createPost(postInput)}
+            className="mt-2 border-2 self-center"
+          >
+            Create a post
+          </button>
+        </div>
       )}
 
       {message && <div className="error">{message}</div>}

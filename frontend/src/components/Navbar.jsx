@@ -11,17 +11,19 @@ const Navbar = () => {
   };
   return (
     <header>
-      <div className="container">
+      <div className="p-4 flex justify-between">
         <Link to="/">
-          <h1 className="">yuna</h1>
+          <div className="text-2xl">yuna</div>
         </Link>
-        <nav>
+        <nav className="">
           {user && (
-            <div>
-              <Link className="userLink" to={`/user/${user.id}`}>
+            <div className="text-base">
+              <Link className="font-bold" to={`/user/${user.id}`}>
                 {user.name}
               </Link>
-              <button onClick={handleClick}>Log out</button>
+              <button className="mx-2" onClick={handleClick}>
+                Log out
+              </button>
             </div>
           )}
           {!user && (
