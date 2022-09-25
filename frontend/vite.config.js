@@ -6,11 +6,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      //      "/": {
-      //        target: "http://localhost:4000",
-      //        changeOrigin: true,
-      //        secure: false,
-      //      },
+      "/": {
+        target: "http://localhost:4000",
+        changeOrigin: true,
+        secure: false,
+      },
     },
   },
 });

@@ -16,7 +16,7 @@ const Home = () => {
   const createPost = async (content) => {
     if (postInput) {
       setMessage("");
-      const response = await fetch("http://localhost:4000/api/posts/", {
+      const response = await fetch("/api/posts/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,7 +38,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("http://localhost:4000/api/posts");
+      const response = await fetch("/api/posts");
       const json = await response.json();
 
       if (response.ok) {
