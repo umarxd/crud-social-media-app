@@ -12,7 +12,9 @@ const UserPosts = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(`/api/posts/user/${id}`);
+      const response = await fetch(
+        `http://localhost:4000/api/posts/user/${id}`
+      );
       const json = await response.json();
 
       if (response.ok) {

@@ -92,7 +92,7 @@ const getUserPosts = async (req, res) => {
   const userId = user._id.toString();
   const posts = await Post.find({});
 
-  const userPosts = posts.filter((post) => post.user.id == userId);
+  const userPosts = posts.filter((post) => post.user.id == userId).reverse();
   return res.status(200).json(userPosts);
 };
 
