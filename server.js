@@ -15,9 +15,9 @@ app.use(cors());
 app.use("/api/posts", postRoutes);
 app.use("/api/user", userRoutes);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "frontend", "dist")));
-}
+//if (process.env.NODE_ENV === "production") {
+app.use(express.static(path.join(__dirname, "frontend", "dist")));
+//}
 
 mongoose
   .connect(process.env.MONGO_URI)
