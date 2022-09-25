@@ -56,22 +56,20 @@ const Home = () => {
           <input
             value={postInput}
             onChange={(e) => setPostInput(e.target.value)}
-            className="w-3/5 h-8 mt-4 p-6  text-black self-center"
+            className="w-3/5 h-8 mt-4 text-black self-center form-control block px-3 py-1.5 text-base font-normal border border-solid rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-slate-800 focus:outline-none"
             placeholder="256 characters is the max."
           />
           <button
             onClick={() => createPost(postInput)}
-            className="self-center inline-flex items-center justify-center p-0.5 my-2 text-sm font-medium rounded-sm group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white"
+            className="w-max mx-auto my-3 transition-all ease-in duration-75 bg-slate-800 hover:bg-slate-900 font-bold text-base px-2 py-1 rounded-sm"
           >
-            <span className="p-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0">
-              Create a Post
-            </span>
+            Create a Post
           </button>
         </div>
       )}
 
-      {message && <div className="error">{message}</div>}
-      <div ref={parent} className="posts">
+      {message && <div>{message}</div>}
+      <div ref={parent}>
         {posts &&
           posts.map((post) => <PostDetails key={post._id} post={post} />)}
       </div>

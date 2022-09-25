@@ -18,7 +18,7 @@ const Navbar = () => {
         <nav className="">
           {user && (
             <div className="text-base">
-              <Link className="font-bold" to={`/user/${user.id}`}>
+              <Link className="font-bold border-b-2" to={`/user/${user.id}`}>
                 {user.name}
               </Link>
               <button

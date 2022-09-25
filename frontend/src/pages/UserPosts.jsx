@@ -25,14 +25,12 @@ const UserPosts = () => {
   }, [dispatch, id]);
 
   return (
-    <div ref={parent} className="">
-      {posts && <h1>{posts[0]?.user.name}</h1>}
+    <div ref={parent}>
+      {posts && <div className="text-2xl font-bold">{posts[0]?.user.name}</div>}
       {posts?.length ? (
         posts.map((post) => <PostDetails key={post._id} post={post} />)
       ) : (
-        <div style={{ marginBlock: 50 }}>
-          This user haven't posted anything.
-        </div>
+        <div>This user haven't posted anything.</div>
       )}
     </div>
   );
